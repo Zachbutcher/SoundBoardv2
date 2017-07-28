@@ -13,6 +13,8 @@
 		BDF23AB01F2ACACD0070A40D /* SoundBoardv2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDF23AAE1F2ACACD0070A40D /* SoundBoardv2.xcdatamodeld */; };
 		BDF23AB21F2ACACD0070A40D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF23AB11F2ACACD0070A40D /* Assets.xcassets */; };
 		BDF23AB51F2ACACD0070A40D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF23AB31F2ACACD0070A40D /* LaunchScreen.storyboard */; };
+		BDF23ABD1F2ACBEC0070A40D /* CreateSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23ABC1F2ACBEC0070A40D /* CreateSoundViewController.swift */; };
+		BDF23ABF1F2BA8650070A40D /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23ABE1F2BA8650070A40D /* DataAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BDF23AB11F2ACACD0070A40D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDF23AB41F2ACACD0070A40D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDF23AB61F2ACACD0070A40D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDF23ABC1F2ACBEC0070A40D /* CreateSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSoundViewController.swift; sourceTree = "<group>"; };
+		BDF23ABE1F2BA8650070A40D /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				BDF23AA71F2ACACD0070A40D /* AppDelegate.swift */,
 				BDF23AA91F2ACACD0070A40D /* ViewController.swift */,
+				BDF23ABE1F2BA8650070A40D /* DataAccess.swift */,
+				BDF23ABC1F2ACBEC0070A40D /* CreateSoundViewController.swift */,
 				BDF23AAB1F2ACACD0070A40D /* Main.storyboard */,
 				BDF23AB11F2ACACD0070A40D /* Assets.xcassets */,
 				BDF23AB31F2ACACD0070A40D /* LaunchScreen.storyboard */,
@@ -142,7 +148,9 @@
 			files = (
 				BDF23AB01F2ACACD0070A40D /* SoundBoardv2.xcdatamodeld in Sources */,
 				BDF23AAA1F2ACACD0070A40D /* ViewController.swift in Sources */,
+				BDF23ABD1F2ACBEC0070A40D /* CreateSoundViewController.swift in Sources */,
 				BDF23AA81F2ACACD0070A40D /* AppDelegate.swift in Sources */,
+				BDF23ABF1F2BA8650070A40D /* DataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
