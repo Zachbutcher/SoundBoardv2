@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
+    var dataAccess :DataAccess = DataAccess()
+    
     override func viewWillAppear(_ animated: Bool) {
         //getShoes(filterString: nil)
         tableView.reloadData()
@@ -31,12 +33,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return dataAccess.recordings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
+        let recording = dataAccess.recordings[indexPath.row]
+        
+        cell.textLabel?.text = recording.name
         return cell
     }
     

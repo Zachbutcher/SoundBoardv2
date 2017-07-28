@@ -101,7 +101,14 @@ class CreateSoundViewController: UIViewController {
     }
 
     @IBAction func addTapped(_ sender: Any) {
+        do{
+            try dataAccess.addRecording(newAudio: NSData(contentsOf: audioFilename!), recordingName: nameTextField.text!)
+        }catch{
+            
+        }
+        nameTextField.text = ""
         
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func textfieldEdited(_ sender: Any) {

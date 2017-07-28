@@ -15,10 +15,8 @@ class DataAccess {
     
     var recordings :[Recording] = []
     
-    
-    func DataAccess(){
-
-    
+    init(){
+      recordings = getRecordings()
     }
     
     func getRecordings() -> [Recording]{
@@ -30,14 +28,15 @@ class DataAccess {
         return recordings
     }
     
-    func addRecording(newAudio:Any, recordingName: String){
+    func addRecording(newAudio:NSData, recordingName: String){
         
         let newRecording = Recording(context: context)
         newRecording.name = recordingName
-        //newRecording.recording = Audio(imagePreview.image!)! as NSData
-    
+        newRecording.recording = newAudio
     
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        print(recordings)
 }
 
 
