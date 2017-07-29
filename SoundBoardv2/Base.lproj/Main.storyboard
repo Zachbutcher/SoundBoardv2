@@ -37,7 +37,7 @@
                     <navigationItem key="navigationItem" id="zaB-oP-EIl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hvf-C3-fl8">
                             <connections>
-                                <segue destination="wsX-LY-E1F" kind="show" id="Yse-ae-OzE"/>
+                                <segue destination="wsX-LY-E1F" kind="show" identifier="createSound" id="Yse-ae-OzE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

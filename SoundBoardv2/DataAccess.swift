@@ -28,6 +28,14 @@ class DataAccess {
         return recordings
     }
     
+    func refreshRecordings(){
+        do {
+            try recordings = context.fetch(Recording.fetchRequest()) as! [Recording]
+        }catch{
+            
+        }
+    }
+    
     func addRecording(newAudio:NSData, recordingName: String){
         
         let newRecording = Recording(context: context)
@@ -37,7 +45,14 @@ class DataAccess {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         print(recordings)
-}
+    }
+    
+    func delete(name: Recording){
+        context.delete(name)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+    }
 
 
 }

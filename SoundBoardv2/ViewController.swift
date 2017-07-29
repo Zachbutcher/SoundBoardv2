@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var dataAccess :DataAccess = DataAccess()
+    var audioPlayer :AVAudioPlayer?
     
     override func viewWillAppear(_ animated: Bool) {
         //getShoes(filterString: nil)
-        tableView.reloadData()
+        refreshTable()
         
+    }
+    
+    func refreshTable(){
+        dataAccess.refreshRecordings()
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -46,11 +53,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let shoe = shoes[indexPath.row]
-        performSegue(withIdentifier: "createSound", sender: nil)
+
+        do{
+            audioPlayer = try AVAudioPlayer(data: dataAccess.recordings[indexPath.row].recording! as Data)
+            audioPlayer!.prepareToPlay()
+            audioPlayer!.play()
+        }catch{
+            
+        }
+
+        //dataAccess.recordings[indexPath.row].recording
     }
 
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            dataAccess.delete(name: dataAccess.recordings[indexPath.row])
+            refreshTable()
+        }
+    }
 
 }
 
